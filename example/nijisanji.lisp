@@ -1,4 +1,5 @@
-(ql:quickload 'brainfxbk)
+(ql:quickload 'brainfxbk
+              :silent t)
 
 (in-package :brainfxbk)
 
