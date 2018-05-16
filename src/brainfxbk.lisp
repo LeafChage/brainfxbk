@@ -3,7 +3,8 @@
   (:use :cl
         :cl-ppcre
         :split-sequence)
-  (:export #:main))
+  (:export #:main
+           #:main-for-code))
 (in-package :brainfxbk)
 
 (deftype token ()
@@ -22,6 +23,10 @@
   (run (parse
          (split-space (add-space (reaf-file (car argv))
                                  *token*)))))
+
+(defun main-for-code (src)
+  (run (parse
+         (split-space (add-space src *token*)))))
 
 (defun get-token (key)
   (cdr (assoc key *token*)))
